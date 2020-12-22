@@ -25,7 +25,7 @@ purgeCache() {
 		-H "X-Auth-Email: ${CF_EMAIL}" \
     -H "X-Auth-Key: ${CF_AUTH_KEY}" \
 		-H "Content-Type: application/json" \
-     --data '{"files":["${CF_MYDOMAIN}/css/app.css","${CF_MYDOMAIN}/js/app.js"]}')
+     --data '{"files":["${CF_MYDOMAIN}/css/app.css","${CF_MYDOMAIN}/js/app.js", "${CF_MYDOMAIN}/mix-manifest.json"]}')
   echo "$result"
 }
 
