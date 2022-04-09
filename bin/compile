@@ -25,7 +25,7 @@ purgeCache() {
 		-H "X-Auth-Email: ${CF_EMAIL}" \
     -H "X-Auth-Key: ${CF_AUTH_KEY}" \
 		-H "Content-Type: application/json" \
-     --data '{"files":["${CF_MYDOMAIN}/css/styles.css", "${CF_MYDOMAIN}/css/cookieconsent.css", "${CF_MYDOMAIN}/javascript/main.js",  "${CF_MYDOMAIN}/javascript/cookieconsent.js", "${CF_MYDOMAIN}/favicon/manifest.json",  "${CF_MYDOMAIN}/sitemap.xml",]}')
+     --data '{"files":["${CF_MYDOMAIN}/css/styles.css", "${CF_MYDOMAIN}/css/cookieconsent.css", "${CF_MYDOMAIN}/javascript/main.js", "${CF_MYDOMAIN}/javascript/cookieconsent.js"]}')
   echo "$result"
 }
 
