@@ -4,7 +4,6 @@
 # CF_ZONE_ID
 # CF_AUTH_KEY
 # CF_EMAIL
-# CF_MYDOMAIN
 # API used: https://api.cloudflare.com/#zone-purge-all-files
 
 
@@ -25,13 +24,13 @@ purgeCache() {
 		-H "X-Auth-Email: ${CF_EMAIL}" \
     -H "X-Auth-Key: ${CF_AUTH_KEY}" \
 		-H "Content-Type: application/json" \
-     --data '{"files":["${CF_MYDOMAIN}/css/styles.css", "${CF_MYDOMAIN}/javascript/main.js", "${CF_MYDOMAIN}/css/cookieconsent.css", "${CF_MYDOMAIN}/javascript/cookieconsent.js", "${CF_MYDOMAIN}/favicon/manifest.json", "${CF_MYDOMAIN}/landers/main.js"]}')
+    --data '{"purge_everything":true}')
   echo "$result"
 }
 
 if [ -z ${CF_AUTH_KEY+x} ]; then
   echo "-----> Not purging Cloudflare cache"
-  echo "       Set CF_ZONE_ID, CF_AUTH_KEY, CF_EMAIL & CF_MYDOMAIN"
+  echo "       Set CF_ZONE_ID, CF_AUTH_KEY & CF_EMAIL"
 else
   echo "-----> Purging Cloudflare cache"
 
