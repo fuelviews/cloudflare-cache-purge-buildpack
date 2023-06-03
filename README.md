@@ -49,9 +49,3 @@ The Cloudflare Zone ID for your site can be obtained via the API:
     "status":"active",
     ...
 ```
-
-
-EDITS:
-- Add domain var
-- Change request to POST
-- Change data from purge everything, to only purge chosen files (app.css and app.js created by yarn run prod)
